@@ -5,7 +5,7 @@
       <div class="errors-container">
         <ul>
           <% @subvention_request.errors.messages.each do |message| %>
-            <li><%= message[1][0][:message] %></li>
+            <li><%= message[1][0] %></li>
           <% end %>
         </ul>
       </div>

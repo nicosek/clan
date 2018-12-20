@@ -5,6 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Subvention.create!({
+    name: 'Subvention des activités sportives',
+    start_date: '1/10/2018',
+    end_date: '31/12/2018',
+    amount: 90
+  })
+
+Subvention.create!({
+    name: 'Subvention des activités culturelles',
+    start_date: '1/09/2018',
+    end_date: '31/12/2018',
+    amount: 120
+  })
+
 Subvention.create!( {
     name: 'Subvention rentrée scolaire',
     start_date: '15/08/2018',
