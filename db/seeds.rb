@@ -13,14 +13,14 @@ Subvention.create!({
     name: 'Subvention des activités sportives',
     start_date: '1/10/2018',
     end_date: '31/12/2018',
-    amount: 90
+    amount: 9000
   })
 
 Subvention.create!({
     name: 'Subvention des activités culturelles',
     start_date: '1/09/2018',
     end_date: '31/12/2018',
-    amount: 120
+    amount: 12000
   })
 
 Subvention.create!( {
