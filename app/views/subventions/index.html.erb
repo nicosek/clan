@@ -8,12 +8,16 @@
       <div class="card-category">A hauteur de <%= subvention.amount / 100 %>€</div>
       <div class="card-description">
         <h4><%= subvention.name %></h4>
-
+        <p>Du <%= subvention.start_date.strftime("%d/%m/%Y") %> au <%= subvention.end_date.strftime("%d/%m/%Y") %></p>
       </div>
       <div class="card-user"><h5><%= subvention.subvention_requests.size %></h5>
         <p>participants</p>
       </div>
-      <a class="card-link" href=<%= new_subvention_subvention_request_path(subvention) %> ></a>
+      <% if subvention.date_ok? %>
+        <a class="card-link" href=<%= new_subvention_subvention_request_path(subvention) %>></a>
+      <% else %>
+        <div class="card-time-out"><h1>EXPIRE</h1></div>
+      <% end %>
     </div>
   </div>
   <% end %>

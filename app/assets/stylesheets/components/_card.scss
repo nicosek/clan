@@ -39,7 +39,7 @@
 }
 .card-description p {
   font-size: 14px;
-  opacity: 0.7;
+  opacity: 1;
   font-weight: lighter;
 }
 .card-link {
@@ -50,8 +50,27 @@
   width: 100%;
   z-index: 2;
   background: black;
-  opacity: 0;
+  opacity: 0.1;
 }
 .card-link:hover {
+  opacity: 0;
+}
+
+.card-time-out {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 5;
+  background: black;
   opacity: 0.1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-time-out:hover {
+  opacity: 0.6;
 }
