@@ -15,13 +15,15 @@ class SubventionRequestsController < ApplicationController
     else
       @subvention_request.errors.add(:amount_asked, message: "Le montant du remboursement ne doit pas\
    dépasser celui autorisé par la subvention") if subvention_request_params[:amount_asked].to_i * 100 > @subvention.amount
-      @subvention_request.errors.add(:date, message: "Vous ne pouvez pas encore/ plus bénéficier de cette subvention.")\
+      @subvention_request.errors.add(:date, message: "Vous ne pouvez pas encore/plus bénéficier de cette subvention.")\
        if !date_condition(@subvention.start_date, @subvention.end_date)
       render :new
     end
   end
 
   def show
+    @subvention = Subvention.find(params[:subvention_id])
+    @subvention_request = SubventionRequest.find(params[:id])
   end
 
   def index

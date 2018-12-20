@@ -1,17 +1,17 @@
 <h1>Voici la liste des subventions proposées:</h1><br>
+
 <div class="row">
 
   <% @subventions.each do |subvention| %>
   <div class="col-xs-6 col-sm-4">
-    <div class = "subvention">
-      <h4>
-        <%= subvention.name %> (du <%= subvention.start_date.strftime("%d/%m/%Y") %> au <%= subvention.end_date.strftime("%d/%m/%Y") %>)
-      </h4>
-      <h5>
-        Cette subvention est remboursée à hauteur de <%= subvention.amount / 100 %>€
-      </h5>
-      <br>
-      <%= link_to "J'en profite!", new_subvention_subvention_request_path(subvention), class: "btn btn-primary" %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+      <div class="card-category">A hauteur de <%= subvention.amount / 100 %>€</div>
+      <div class="card-description">
+        <h4><%= subvention.name %></h4>
+
+      </div>
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+      <a class="card-link" href=<%= new_subvention_subvention_request_path(subvention) %> ></a>
     </div>
   </div>
   <% end %>

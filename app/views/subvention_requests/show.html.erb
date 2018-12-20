@@ -1,5 +1,7 @@
 <h1>Votre demande a été envoyée et sera bientôt traitée.</h1>
 <br>
 <br>
-<div style="display: flex; justify-content: center;"></div>
-<%= link_to "Retour à l'accueil", subventions_path, class:"btn btn-primary" %>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <div><%= link_to "Retour à l'accueil", subventions_path, class:"btn btn-primary" %></div>
+  <div><%= cl_image_tag @subvention_request.justif_path, height: 300, width: 400, crop: :fill %></div>
+</div>

@@ -25,7 +25,8 @@
 
   <div class="form-group">
     <%= f.label :justif_path, "Joindre un justificatif" %>
-    <%= f.text_field :justif_path, class: 'form-control' %>
+    <%= f.input :justif_path, class: 'form-control' %>
+    <%= f.input :justif_path_cache, as: :hidden %>
   </div>
 
   <%= f.submit class: 'btn btn-primary' %>
