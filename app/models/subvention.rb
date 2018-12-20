@@ -1,0 +1,2 @@
+class Subvention < ApplicationRecord
+end

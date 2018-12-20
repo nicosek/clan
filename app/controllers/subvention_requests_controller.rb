@@ -1,0 +1,2 @@
+class SubventionRequestsController < ApplicationController
+end

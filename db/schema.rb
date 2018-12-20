@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_20_004009) do
+ActiveRecord::Schema.define(version: 2018_12_20_010112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "subvention_requests", force: :cascade do |t|
+    t.bigint "subvention_id"
+    t.string "justif_path"
+    t.string "email"
+    t.integer "amount_asked"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subvention_id"], name: "index_subvention_requests_on_subvention_id"
+  end
+
+  create_table "subventions", force: :cascade do |t|
+    t.string "name"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +46,5 @@ ActiveRecord::Schema.define(version: 2018_12_20_004009) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "subvention_requests", "subventions"
 end
