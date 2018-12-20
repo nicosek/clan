@@ -13,7 +13,14 @@
   right: 10px;
   top: 10px;
   width: 40px;
+  height: 40px;
   border-radius: 50%;
+  background-color: green;
+  text-align: center;
+}
+
+.card-user p {
+  font-size: 0.5em;
 }
 .card-category {
   position: absolute;
