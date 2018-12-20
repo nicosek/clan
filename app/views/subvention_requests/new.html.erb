@@ -15,10 +15,10 @@
 
   <div class="form-group">
     <div class="row">
-      <div class="col-xs-2 col-xs-offset-2">
+      <div class="col-xs-2 col-xs-offset-3">
         <%= f.label :email, "Votre email" %>
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-4">
         <%= f.text_field :email, class: 'form-control' %>
       </div>
     </div>
@@ -26,10 +26,10 @@
 
   <div class="form-group">
     <div class="row">
-      <div class="col-xs-4">
+      <div class="col-xs-5">
         <%= f.label :amount_asked, "Montant du remboursement (max. autorisé: #{@subvention.amount / 100}€)" %>
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-4">
         <%= f.text_field :amount_asked, class: 'form-control' %>
       </div>
     </div>
@@ -37,7 +37,7 @@
 
   <div class="form-group">
     <div class="row">
-      <div class="col-xs-4">
+      <div class="col-xs-5">
         <%= f.label :justif_path, "Joindre un justificatif" %>
       </div>
       <div class="col-xs-2">
