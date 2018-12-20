@@ -1,4 +1,6 @@
 <h1>Demande de remboursement pour <strong><%= @subvention.name %></strong></h1>
+<br>
+<br>
 
 <%= simple_form_for [@subvention, @subvention_request] do |f| %>
   <% if @subvention_request.errors.any? %>
@@ -17,7 +19,7 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :amount_asked, "Montant du remboursement" %>
+    <%= f.label :amount_asked, "Montant du remboursement (max. autorisé: #{@subvention.amount / 100}€)" %>
     <%= f.text_field :amount_asked, class: 'form-control' %>
   </div>
 

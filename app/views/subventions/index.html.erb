@@ -1,4 +1,19 @@
 <h1>Voici la liste des subventions proposées:</h1><br>
-<% @subventions.each do |subvention| %>
-  <h5><%= subvention.name %> <%= link_to "J'en profite!", new_subvention_subvention_request_path(subvention) %> </h5>
-<% end %>
+<div class="row">
+
+  <% @subventions.each do |subvention| %>
+  <div class="col-xs-6 col-sm-4">
+    <div class = "subvention">
+      <h4>
+        <%= subvention.name %> (du <%= subvention.start_date.strftime("%d/%m/%Y") %> au <%= subvention.end_date.strftime("%d/%m/%Y") %>)
+      </h4>
+      <h5>
+        Cette subvention est remboursée à hauteur de <%= subvention.amount / 100 %>€
+      </h5>
+      <br>
+      <%= link_to "J'en profite!", new_subvention_subvention_request_path(subvention), class: "btn btn-primary" %>
+    </div>
+  </div>
+  <% end %>
+
+</div>
